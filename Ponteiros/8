@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+type Livro struct {
+	Título string
+	Autor  string
+}
+
+func alterarTitulo(livro *Livro) {
+	if livro.Autor == "Anônimo" {
+		livro.Título = "Desconhecido"
+	}
+}
+
+func main() {
+	livro := Livro{
+		Título: "Livro 1",
+		Autor:  "Anônimo",
+	}
+
+	fmt.Println("Título antes da alteração:", livro.Título)
+	alterarTitulo(&livro)
+	fmt.Println("Título após a alteração:", livro.Título)
+}

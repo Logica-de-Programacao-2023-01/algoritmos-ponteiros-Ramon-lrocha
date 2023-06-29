@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func modificarValor(ponteiro *int) {
+	*ponteiro = 42
+	// Liberar a memória após o uso
+	ponteiro = nil
+}
+
+func main() {
+	var valor int = 10
+
+	fmt.Println("Valor antes da modificação:", valor)
+	modificarValor(&valor)
+	fmt.Println("Valor após a modificação:", valor)
+}

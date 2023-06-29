@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func atualizarMediaPi(ponteiro *float64) {
+	pi := math.Pi
+	valor := *ponteiro
+	media := (valor + pi) / 2
+	*ponteiro = media
+}
+
+func main() {
+	var valor float64 = 3.14
+
+	fmt.Println("Valor antes da atualização:", valor)
+	atualizarMediaPi(&valor)
+	fmt.Println("Valor após a atualização:", valor)
+}

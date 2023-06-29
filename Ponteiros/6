@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func atualizarUltimosDigitos(ponteiro *int) {
+	num := *ponteiro
+	lastDigit := num % 10
+	num /= 10
+	secondLastDigit := num % 10
+	*ponteiro = lastDigit + secondLastDigit
+}
+
+func main() {
+	var numero int = 1234
+
+	fmt.Println("Número antes da atualização:", numero)
+	atualizarUltimosDigitos(&numero)
+	fmt.Println("Número após a atualização:", numero)
+}
