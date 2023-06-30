@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func verificarParImpar(ponteiro *int) {
+	if *ponteiro%2 == 0 {
+		*ponteiro = 0
+	} else {
+		*ponteiro = 1
+	}
+}
+
+func main() {
+	var valor int = 7
+
+	fmt.Println("Valor antes da verificação:", valor)
+	verificarParImpar(&valor)
+	fmt.Println("Valor após a verificação:", valor)
+}
